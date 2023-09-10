@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        // If given a string, create a list or array of everything that is separated by a comma and a space.
+        // Have the output be ready for an html table
+        
+        // Input: "Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James, Simon, Judas, Matthias"
+        // Output: ["Peter", "John", "James", "Andrew", "Philip", "Thomas", "Bartholomew", "Matthew", "James", "Simon", "Judas", "Matthias"]
+        
+        // Need this to render on the page
+        
+        
+        
+        function createTable(arr) {
+            let table = document.createElement('table');
+            let tableBody = document.createElement('tbody');
+        
+            for(var i = 0; i < arr.length; i++) {
+                let row = document.createElement('tr');
+                let cell = document.createElement('td');
+                let cellText = document.createTextNode(arr[i]);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+            }
+            document.body.appendChild(table);
+            table.appendChild(tableBody);
+            table.setAttribute('border', '2');
+        
+        }
+        
+        var thisArray = ["Peter", "John", "James", "Andrew", "Philip", "Thomas", "Bartholomew", "Matthew", "James", "Simon", "Judas", "Matthias"]
+        
+            </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    
+</head>
+<body>
+    <button onclick="createTable(thisArray)">Click Me</button>
+    
+    <table >
+        <tbody>
+            <tr>
+                <td> </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
